@@ -1,3 +1,6 @@
+let transactions = [];
+let myChart;
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js')
@@ -7,8 +10,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-let transactions = [];
-let myChart;
 
 fetch("/api/transaction")
   .then(response => {
